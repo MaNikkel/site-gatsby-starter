@@ -1,31 +1,28 @@
-# Site do curso de Gatsby
+# Gatsby Course repository
 
 [![CircleCI](https://circleci.com/gh/learngatsby/build-personal-website.svg?style=shield)](https://circleci.com/gh/learngatsby/build-personal-website)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Esse repositório é o código fonte do site criado com o curso de de Gatsby:
+*Download the [starter here](https://github.com/learngatsby/build-personal-website/tree/starter) from branch starter ([direct link for .zip file](https://github.com/learngatsby/build-personal-website/archive/starter.zip)).*
+
+This repository is the source code for the course to build a pesonal website, check out the result:
 
 https://learngatsby.github.io/build-personal-website
 
-O curso está publicado no marketplace da Udemy, veja no link:
+The course is available in the marketplace of Udemy:
 
-[Gatsby: Crie seu site pessoal usando React](https://www.udemy.com/gatsby-crie-seu-site-pessoal)
+https://www.udemy.com/gatsby-crie-seu-site-pessoal
 
-Os alunos podem compartilhar seus sites criados e publicados seguindo o curso. Veja os sites dos alunos do curso:
+## How to contribute
 
-https://learngatsby.github.io/sites
+You can contribute to the course with issues and pull requests.
 
-## Como contribuir
+Some ways to contribute:
 
-Você pode contribuir no repositório do GitHub com issues e pull requests.
+- Fix
+- Suggestion
+- Question
+- Or any way you prefer
 
-Algumas formas de contribuição:
-
-- Correções
-- Sugestões
-- Dúvidas
-- Ou outra forma interessante que você quiser
-
-Para divulgar seu site criado com o curso, você pode contribuir nesse projeto:
+At the end of the course, you can share your website to others if you like. See this repository:
 
 https://github.com/learngatsby/learngatsby.github.io
