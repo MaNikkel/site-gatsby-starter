@@ -44,7 +44,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint src/",
-    "deploy": "gh-pages -d public -b master"
+    "test": "npm run lint",
+    "deploy": "gh-pages -d public -b gh-pages"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
