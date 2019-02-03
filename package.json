@@ -9,10 +9,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/learngatsby/build-personal-website"
+    "url": "https://learngatsby.github.io/build-personal-website"
   },
   "bugs": {
-    "url": "https://github.com/learngatsby/build-personal-website/issues"
+    "url": "https://learngatsby.github.io/build-personal-website/issues"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.12",
@@ -45,7 +45,7 @@
     "serve": "gatsby serve",
     "lint": "eslint src/",
     "test": "npm run lint",
-    "deploy": "gh-pages -d public -b gh-pages"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
   },
   "devDependencies": {
     "eslint": "^5.12.0",
