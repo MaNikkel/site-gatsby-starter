@@ -1,9 +1,9 @@
 module.exports = {
+  pathPrefix: '/build-personal-website',
   siteMetadata: {
     title: 'Luan Orlandi',
     author: '@luanorlandi',
     siteUrl: 'https://luanorlandi.github.io/build-personal-website',
-    pathPrefix: '/build-personal-website',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
