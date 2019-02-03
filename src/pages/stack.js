@@ -1,31 +1,34 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from 'components/Layout';
+import SEO from 'components/SEO';
+import Title from 'components/Title';
 
 const Stack = () => (
   <Layout>
+    <SEO
+      pageTitle="Stack"
+      description="Front-end developer, developing apps and web pages"
+      keywords="React, Node, Gatsby, Front-end, developer, API"
+    />
     <Helmet>
       <script
         async
         src="https://cdn1.stackshare.io/javascripts/client-code.js"
-        charSet="utf-8"
+        charset="utf-8"
       />
     </Helmet>
-    <section className="section is-size-5-desktop is-size-6-touch">
-      <div className="container">
-        <h1 className="title has-text-light has-text-centered">Stack</h1>
-        <hr />
-        <p className="content has-text-centered">
-          Tenho experiência com diversas ferramentas e tecnologias modernas, que
-          uso dependendo do projeto.
+    <section className="section is-size-4-desktop is-size-5-touch">
+      <Title>Stack</Title>
+      <div className="has-text-centered">
+        <p className="content">
+          I have experience with many modern tools,
+          I select them for my projects depending on the usage.
         </p>
-        <p className="content has-text-centered">
-          Compartilho minha stack no StackShare:
-        </p>
+        <p className="content">Here is my stack on StackShare:</p>
         <div className="columns is-centered">
-          <div className="column is-half has-text-centered">
+          <div className="column is-half">
             <a
               frameBorder="0"
               data-theme="dark"
@@ -37,9 +40,6 @@ const Stack = () => (
             </a>
           </div>
         </div>
-        <p className="has-text-centered">
-          Veja meus <Link to="/posts">posts</Link>.
-        </p>
       </div>
     </section>
   </Layout>

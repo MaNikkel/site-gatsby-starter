@@ -1,67 +1,107 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from '../components/layout';
-import Card from '../components/card';
-import projectImage from '../assets/gatsby-course.jpg';
-import projectImage2 from '../assets/tic-tac-porg.jpg';
-import projectImage3 from '../assets/memepool.jpg';
-import projectImage4 from '../assets/westworld-intro-creator.jpg';
+import Layout from 'components/Layout';
+import SEO from 'components/SEO';
+import Card from 'components/Card';
+import Title from 'components/Title';
 
-const projectCards = [
-  {
-    title: 'Curso de Gatsby',
-    subtitle: 'Crie seu site pessoal usando React',
-    link: 'https://github.com/luanorlandi/gatsby-course',
-    imageLink: projectImage,
-    tags: ['Gatsby', 'React'],
-  },
-  {
-    title: 'Tic-tac-porg',
-    subtitle: 'Jogo da Velha com tema de Star Wars',
-    link: 'https://luanorlandi.github.io/tic-tac-porg',
-    imageLink: projectImage2,
-    tags: ['React', 'PWA'],
-  },
-  {
-    title: 'Memepool',
-    subtitle: 'Bot do Discord que toca sons de memes',
-    link: 'https://github.com/luanorlandi/memepool',
-    imageLink: projectImage3,
-    tags: ['Node', 'Heroku'],
-  },
-  {
-    title: 'Westworld Intro Creator',
-    subtitle: 'Crie sua intro do Westworld personalizada',
-    link: 'https://westworldintrocreator.kassellabs.io/',
-    imageLink: projectImage4,
-    tags: ['React'],
-  },
-];
+export const queryImage = graphql`
+  query {
+    propject1: file(relativePath: { eq: "gatsby-course.jpg" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    project2: file(relativePath: { eq: "kassel-labs.png" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    project3: file(relativePath: { eq: "tic-tac-porg.png" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    project4: file(relativePath: { eq: "slack-parrot.png" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
-const Projects = () => (
+const Projects = ({ data }) => (
   <Layout>
-    <section className="section is-size-5-desktop is-size-6-touch">
-      <div className="container">
-        <h1 className="title has-text-light has-text-centered">Projetos</h1>
-        <hr />
-        <p className="content has-text-centered">
-          Alguns dos meus projetos de destaque, veja mais no meu{' '}
-          <a href="https://github.com/luanorlandi">GitHub</a>.
-        </p>
-        <div className="columns is-centered">
-          <div className="column is-half">
-            {projectCards.map(projectCard => (
-              <Card key={projectCard.title} {...projectCard} />
-            ))}
-          </div>
+    <SEO
+      pageTitle="Projects"
+      description="Front-end developer, developing apps and web pages"
+      keywords="React, Node, Gatsby, Front-end, developer, API"
+    />
+    <section className="section is-size-4-desktop is-size-5-touch">
+      <Title>Projects</Title>
+      <p className="has-text-centered">
+        Some of my featured projects, see more on my
+        {' '}
+        <a href="https://github.com/luanorlandi">
+          GitHub
+        </a>
+        .
+      </p>
+      <div className="columns is-centered">
+        <div className="column is-half">
+          <Card
+            title="Gatsby Course"
+            subtitle="Build your personal website using React"
+            link="https://www.udemy.com/gatsby-crie-seu-site-pessoal"
+            tags={['Gatsby', 'React']}
+            image={<Img fixed={data.propject1.childImageSharp.fixed} alt="Gatsby Course" />}
+          />
+          <Card
+            title="Kassel Labs"
+            subtitle="Helping people express their creativity and imagination"
+            link="https://kassellabs.io"
+            tags={['React']}
+            image={<Img fixed={data.project2.childImageSharp.fixed} alt="Kassel Labs logo" />}
+          />
+          <Card
+            title="Tic-tac-porg"
+            subtitle="Play tic-tac-toe with Star Wars theme"
+            link="https://luanorlandi.github.io/tic-tac-porg"
+            tags={['React', 'PWA']}
+            image={<Img fixed={data.project3.childImageSharp.fixed} alt="Tic tac toe with porgs and Chewbacca" />}
+          />
+          <Card
+            title="Slack Parrot"
+            subtitle="Behold the Party Parrot on your terminal"
+            link="https://www.npmjs.com/package/slack-parrot"
+            tags={['Node']}
+            image={<Img fixed={data.project4.childImageSharp.fixed} alt="Party parrot animation" />}
+          />
         </div>
-        <p className="has-text-centered">
-          Veja minha <Link to="/stack">stack de ferramentas</Link>.
-        </p>
       </div>
+      <p className="has-text-centered">
+        Check out my
+        {' '}
+        <Link to="/blog">blog</Link>
+        .
+      </p>
     </section>
   </Layout>
 );
+
+Projects.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default Projects;

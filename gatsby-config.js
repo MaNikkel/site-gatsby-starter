@@ -1,31 +1,40 @@
-const pathPrefix = '/build-personal-website';
-
 module.exports = {
-  pathPrefix,
   siteMetadata: {
     title: 'Luan Orlandi',
+    author: '@luanorlandi',
+    siteUrl: 'https://luanorlandi.github.io/build-personal-website',
+    pathPrefix: '/build-personal-website',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sass',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Luan Orlandi',
         short_name: 'Luan Orlandi',
         start_url: '/',
-        background_color: '#202021',
+        background_color: '#303030',
         theme_color: '#303030',
         display: 'minimal-ui',
-        icon: 'src/assets/meta/icon.png', // This path is relative to the root of the site.
+        icon: 'src/assets/images/favicon.png',
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_BUILD_PERSONAL_WEBSITE,
-        head: true,
         anonymize: true,
         respectDNT: true,
       },

@@ -1,5 +1,5 @@
-@import './fonts';
-@import './theme';
+@import './fonts.scss';
+@import './theme.scss';
 @import '~bulma/sass/utilities/_all';
 @import '~bulma/sass/base/_all';
 @import '~bulma/sass/elements/container';
@@ -14,6 +14,7 @@
 @import '~bulma/sass/components/media';
 @import '~bulma/sass/grid/columns';
 
-@import './home';
-@import '../components/header';
-@import '../components/card';
+@import './home.scss';
+@import '../components/Card/Card.scss';
+@import '../components/Header/Header.scss';
+@import '../components/Title/Title.scss';
