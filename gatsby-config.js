@@ -23,7 +23,7 @@ module.exports = {
       options: {
         name: 'Luan Orlandi',
         short_name: 'Luan Orlandi',
-        start_url: '/',
+        start_url: '/build-personal-website',
         background_color: '#303030',
         theme_color: '#303030',
         display: 'minimal-ui',
